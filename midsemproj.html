@@ -111,6 +111,7 @@
                 <td>Manual</td>
                 <td>Automatic</td>
             </tr>
+            <tr id="stat" onclick='sendData(id)' style="font-size:50px">Operation Mode</tr>
         </table>
         <table style='width:100%'>
 
@@ -150,7 +151,7 @@
                 }
 
                 // change button class and text 
-                if (butn == 'Gren LED' && butn != 'Green LED') {
+                if (butn == 'Gren LED') {
                     var state = document.getElementById(butn).className;
                     state = (state == 'btn on' ? 'btn off' : 'btn on');
                     text = (state == 'btn on' ? ' ON' : ' OFF');
@@ -174,7 +175,7 @@
                         document.getElementById(butn).innerHTML = text;
                     }
 
-                else if(butn == 'Green LED' && butn != 'Gren LED'){
+                else if(butn == 'Green LED'){
                     var state = document.getElementById(butn).className;
                     state = (state == 'btn on' ? 'btn off' : 'btn on');
                     text = (state == 'btn on' ? ' ON' : ' OFF');
