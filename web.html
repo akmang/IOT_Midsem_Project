@@ -173,8 +173,19 @@
                     document.getElementById(x).className = state;
                     document.getElementById(x).innerHTML = text;
                 }
+            
+            function state_deactivate(x){
+                var state = document.getElementById(x).className;
+                    state = (state == 'btn off');
+                    text = (state == ' OFF');
+                    document.getElementById(x).className = state;
+                    document.getElementById(x).innerHTML = text;
+            }
 
             function sendData_2(butn2){
+                var URL, variab, text;
+                URL = 'LEDGurl';
+                variab = 'LEDG';
                 if (butn2 == 'Start') {
                     var state = document.getElementById(butn2).className;
                     state = (state == 'btn on' ? 'btn off' : 'btn on');
@@ -183,7 +194,7 @@
                     document.getElementById(x).innerHTML = text;
                     //state_activate(butn2);
                 }
-                else if (butn2 == 'Stop') {
+                else{
                     var state = document.getElementById(butn2).className;
                     state = (state == 'btn on' ? 'btn off' : 'btn on');
                     text = (state == 'btn on' ? ' Stop' : ' Stop');
@@ -200,14 +211,20 @@
                     URL = 'LEDRurl';
                     variab = 'LEDR';
                     state_activate(butn);
+                    state_deactivate('Green Led');
                 }
                 // manual
-                else if (butn == 'Green LED'){
+                else{// if (butn == 'Green LED')
                     URL = 'LEDGurl';
                     variab = 'LEDG';
                     state_activate(butn);
-                    sendData_2('Start');
-                    sendData_2('Stop');
+                    state_deactivate('Gren Led');
+                    if(butn == 'Start'){
+                        sendData_2('Start');
+                    }
+                    else{
+                        sendData_2('Stop');
+                    }
                 }
 
 
