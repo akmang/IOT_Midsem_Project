@@ -46,11 +46,18 @@
             margin-right: auto;
         }
        
-
-        td {
+        body {
+        background-color:#BDB7C9;
+       }
+        th,td {
             font-size: 30px;
             margin-top: 50px;
-            margin-bottom: 5px
+            margin-bottom: 5px;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+            padding-right: 40px;
+            border-color: #FFFFFF;
         }    
 
         p {
@@ -96,7 +103,27 @@
           </section>
 
     <p><div id="waterworks"></div></p>
-
+    
+    <br /><br />
+    <h1 style="color:White;" id="stat" onclick='sendData(id)' class="display-4">Operation Mode</h1>
+    <table style='width:100%;margin-bottom: 10px;'>
+        <tr>
+            <th scope="col" style='width:50%'><h3>Manual</h3></th>
+            <th scope="col"><h3>Automatic</h3></th>
+        </tr>
+        <tr>
+            <td><button pill class='btn off btn-secondary col-2' id='Green LED' onclick='sendData(id)'>OFF</button>
+             <td><button pill class='btn off btn-secondary col-2' id='Gren LED' onclick='sendData(id)'>OFF</button></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="d-grid gap-1 col-1 mx-auto">
+                <button pill class="btn off btn-secondary btn-sm" type="button" id='Start' onclick='sendData_2(id)'>START</button>
+                <button pill class="btn off btn-secondary btn-sm" type="button" id='Stop' onclick='sendData_2(id)'>STOP</button>
+              </div>
+        </tr>
+            
+    </table>
         
 <!--
     
